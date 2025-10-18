@@ -19,7 +19,7 @@ class AnnotatedSentence extends Sentence
      * Converts a simple sentence to an annotated sentence.
      * @param string|null $param File containing the annotated sentence. OR Simple sentence.
      */
-    public function __construct(?string $param)
+    public function __construct(?string $param = null)
     {
         parent::__construct();
         $this->words = [];
