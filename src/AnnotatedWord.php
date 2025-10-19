@@ -149,7 +149,7 @@ class AnnotatedWord extends Word
                 break;
         }
         if ($this->parse != null) {
-            $result = $result . "{morphologicalAnalysis=" . $this->parse->toString__() . "}";
+            $result = $result . "{morphologicalAnalysis=" . $this->parse->__toString() . "}";
         }
         if ($this->metamorphicParse != null) {
             $result = $result . "{metaMorphemes=" . $this->metamorphicParse->__toString() . "}";
@@ -198,7 +198,7 @@ class AnnotatedWord extends Word
         switch ($viewLayerType) {
             case ViewLayerType::INFLECTIONAL_GROUP:
                 if ($this->parse != null) {
-                    return $this->parse->toString__();
+                    return $this->parse->__toString();
                 }
                 break;
             case ViewLayerType::META_MORPHEME:
