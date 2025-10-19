@@ -24,7 +24,8 @@ class AnnotatedSentence extends Sentence
         parent::__construct();
         $this->words = [];
         if ($param !== null) {
-            if (str_contains($param, '.txt')) {
+            if (str_contains($param, '.txt') || str_contains($param, '.dev') ||
+                str_contains($param, '.train') || str_contains($param, '.test')) {
                 $this->file = $param;
                 $fh = fopen($param, 'r');
                 $line = trim(fgets($fh));
@@ -49,6 +50,30 @@ class AnnotatedSentence extends Sentence
     public function getFileName(): string
     {
         return $this->file;
+    }
+
+    public function getDependencyGroups(int $rootWordIndex): array{
+        $groups = [];
+        for ($i = 0; $i < count($this->words); $i++) {
+            $tmpWord = $this->words[$i];
+            $index = $i + 1;
+            while ($tmpWord->getUniversalDependency()->to() != $rootWordIndex && $tmpWord->getUniversalDependency()->to() != 0) {
+                $index = $tmpWord->getUniversalDependency()->to();
+                $tmpWord = $this->words[$tmpWord->getUniversalDependency()->to() - 1];
+            }
+            if ($tmpWord->getUniversalDependency()->to() != 0) {
+                if (array_key_exists($index, $groups)) {
+                    $phrase = $groups[$index];
+                } else {
+                    $phrase = new AnnotatedPhrase($i, $tmpWord->getUniversalDependency()->__toString());
+                    $groups[$index] = $phrase;
+                }
+                $phrase->addWord($this->words[$i]);
+            }
+        }
+        $dependencyGroups = [];
+        array_push($dependencyGroups, ...array_values($groups));
+        return $dependencyGroups;
     }
 
     /**
@@ -88,7 +113,7 @@ class AnnotatedSentence extends Sentence
     {
         foreach ($this->words as $word) {
             $annotatedWord = $word;
-            if ($annotatedWord instanceof AnnotatedWord && $annotatedWord->getArgumentList() == null) {
+            if ($annotatedWord instanceof AnnotatedWord && $annotatedWord->getArgumentList() != null) {
                 if ($annotatedWord->getArgumentList()->containsPredicate()) {
                     return true;
                 }
@@ -106,7 +131,7 @@ class AnnotatedSentence extends Sentence
     {
         foreach ($this->words as $word) {
             $annotatedWord = $word;
-            if ($annotatedWord instanceof AnnotatedWord && $annotatedWord->getFrameElementList() == null) {
+            if ($annotatedWord instanceof AnnotatedWord && $annotatedWord->getFrameElementList() != null) {
                 if ($annotatedWord->getFrameElementList()->containsPredicate()) {
                     return true;
                 }

@@ -8,15 +8,15 @@ class AnnotatedPhrase extends Sentence
 {
     private int $wordIndex;
 
-    private string $tag;
+    private ?string $tag;
 
     /**
      * Constructor for AnnotatedPhrase. AnnotatedPhrase stores information about phrases such as
      * Shallow Parse phrases or named entity phrases.
      * @param int $wordIndex Starting index of the first word in the phrase w.r.t. original sentence the phrase occurs.
-     * @param string $tag Tag of the phrase. Corresponds to the shallow parse or named entity tag.
+     * @param string|null $tag Tag of the phrase. Corresponds to the shallow parse or named entity tag.
      */
-    public function __construct(int $wordIndex, string $tag){
+    public function __construct(int $wordIndex, ?string $tag){
         parent::__construct();
         $this->wordIndex = $wordIndex;
         $this->tag = $tag;

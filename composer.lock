@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "532c3d8630807228d26c689aa8b84809",
+    "content-hash": "01e1433a2eb7a38a57a84ae4b8b8c4cb",
     "packages": [],
     "packages-dev": [
         {
@@ -407,16 +407,16 @@
         },
         {
             "name": "olcaytaner/propbank",
-            "version": "1.0.1",
+            "version": "1.0.2",
             "source": {
                 "type": "git",
                 "url": "https://github.com/StarlangSoftware/TurkishPropBank-Php.git",
-                "reference": "302cc8c0bf97bce8d69312836beb9a7a081a7e71"
+                "reference": "8f4629018b2c25d042377f109b56372f21fed99c"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/StarlangSoftware/TurkishPropBank-Php/zipball/302cc8c0bf97bce8d69312836beb9a7a081a7e71",
-                "reference": "302cc8c0bf97bce8d69312836beb9a7a081a7e71",
+                "url": "https://api.github.com/repos/StarlangSoftware/TurkishPropBank-Php/zipball/8f4629018b2c25d042377f109b56372f21fed99c",
+                "reference": "8f4629018b2c25d042377f109b56372f21fed99c",
                 "shasum": ""
             },
             "require-dev": {
@@ -443,9 +443,9 @@
             "description": "Simple Propbank library",
             "support": {
                 "issues": "https://github.com/StarlangSoftware/TurkishPropBank-Php/issues",
-                "source": "https://github.com/StarlangSoftware/TurkishPropBank-Php/tree/1.0.1"
+                "source": "https://github.com/StarlangSoftware/TurkishPropBank-Php/tree/1.0.2"
             },
-            "time": "2025-08-22T15:48:51+00:00"
+            "time": "2025-10-19T10:58:36+00:00"
         },
         {
             "name": "olcaytaner/sentinet",
@@ -534,6 +534,45 @@
                 "source": "https://github.com/StarlangSoftware/TurkishWordNet-Php/tree/1.0.1"
             },
             "time": "2025-10-07T10:59:11+00:00"
+        },
+        {
+            "name": "olcaytaner/xmlparser",
+            "version": "1.0.1",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/StarlangSoftware/XmlParser-Php.git",
+                "reference": "7501c5426553772c7abace5160f93d28d02571ad"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/StarlangSoftware/XmlParser-Php/zipball/7501c5426553772c7abace5160f93d28d02571ad",
+                "reference": "7501c5426553772c7abace5160f93d28d02571ad",
+                "shasum": ""
+            },
+            "require-dev": {
+                "phpunit/phpunit": "11.4.0"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "olcaytaner\\XmlParser\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "GPL-3.0-or-later"
+            ],
+            "authors": [
+                {
+                    "name": "y"
+                }
+            ],
+            "description": "Simple Xml Parser",
+            "support": {
+                "issues": "https://github.com/StarlangSoftware/XmlParser-Php/issues",
+                "source": "https://github.com/StarlangSoftware/XmlParser-Php/tree/1.0.1"
+            },
+            "time": "2025-01-01T10:31:15+00:00"
         },
         {
             "name": "phar-io/manifest",

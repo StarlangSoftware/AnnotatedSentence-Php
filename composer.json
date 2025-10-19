@@ -25,11 +25,12 @@
     "olcaytaner/dictionary": "1.0.0",
     "olcaytaner/morphologicalanalysis": "1.0.1",
     "olcaytaner/namedentityrecognition": "1.0.0",
-    "olcaytaner/propbank": "1.0.1",
+    "olcaytaner/propbank": "1.0.2",
     "olcaytaner/framenet": "1.0.1",
     "olcaytaner/dependencyparser": "1.0.0",
     "olcaytaner/sentinet": "1.0.0",
     "olcaytaner/wordnet": "1.0.1",
-    "olcaytaner/corpus": "1.0.0"
+    "olcaytaner/corpus": "1.0.0",
+    "olcaytaner/xmlparser": "1.0.1"
   }
 }

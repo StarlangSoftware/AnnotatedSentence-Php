@@ -48,7 +48,7 @@ class AnnotatedWord extends Word
     {
         parent::__construct("");
         if ($second === null) {
-            $splitLayers = preg_split("{}", $word);
+            $splitLayers = preg_split("/[{}]/", $word);
             foreach ($splitLayers as $layer) {
                 if ($layer == "")
                     continue;
@@ -82,7 +82,7 @@ class AnnotatedWord extends Word
                                             $this->shallowParse = $layerValue;
                                         } else {
                                             if ($layerType == "universalDependency") {
-                                                $values = explode($layerValue, "$");
+                                                $values = explode( "$", $layerValue);
                                                 $this->universalDependency = new UniversalDependencyRelation((int)$values[0], $values[1]);
                                             } else {
                                                 if ($layerType == "framenet") {
@@ -455,7 +455,7 @@ class AnnotatedWord extends Word
      * Returns the shallow parse layer of the word.
      * @return string Shallow parse tag of the word.
      */
-    public function getShallowParse(): string
+    public function getShallowParse(): ?string
     {
         return $this->shallowParse;
     }
