@@ -298,9 +298,9 @@ class AnnotatedWord extends Word
 
     /**
      * Returns the semantic layer of the word.
-     * @return string Sense id of the word.
+     * @return string|null Sense id of the word.
      */
-    public function getSemantic(): string
+    public function getSemantic(): ?string
     {
         return $this->semantic;
     }
