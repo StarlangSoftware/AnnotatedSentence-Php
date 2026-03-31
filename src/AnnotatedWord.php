@@ -316,9 +316,9 @@ class AnnotatedWord extends Word
 
     /**
      * Returns the named entity layer of the word.
-     * @return NamedEntityType Named entity tag of the word.
+     * @return NamedEntityType|null Named entity tag of the word.
      */
-    public function getNamedEntityType(): NamedEntityType
+    public function getNamedEntityType(): ?NamedEntityType
     {
         return $this->namedEntityType;
     }
