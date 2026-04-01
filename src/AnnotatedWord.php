@@ -258,9 +258,9 @@ class AnnotatedWord extends Word
 
     /**
      * Returns the morphological parse layer of the word.
-     * @return MorphologicalParse The morphological parse of the word.
+     * @return MorphologicalParse|null The morphological parse of the word.
      */
-    public function getParse(): MorphologicalParse
+    public function getParse(): ?MorphologicalParse
     {
         return $this->parse;
     }
@@ -280,9 +280,9 @@ class AnnotatedWord extends Word
 
     /**
      * Returns the metamorphic parse layer of the word.
-     * @return MetamorphicParse The metamorphic parse of the word.
+     * @return MetamorphicParse|null The metamorphic parse of the word.
      */
-    public function getMetamorphicParse(): MetamorphicParse
+    public function getMetamorphicParse(): ?MetamorphicParse
     {
         return $this->metamorphicParse;
     }
@@ -338,9 +338,9 @@ class AnnotatedWord extends Word
 
     /**
      * Returns the semantic role layer of the word.
-     * @return ArgumentList Semantic role tag of the word.
+     * @return ArgumentList|null Semantic role tag of the word.
      */
-    public function getArgumentList(): ArgumentList
+    public function getArgumentList(): ?ArgumentList
     {
         return $this->argumentList;
     }
@@ -360,9 +360,9 @@ class AnnotatedWord extends Word
 
     /**
      * Returns the frameNet layer of the word.
-     * @return FrameElementList FrameNet tag of the word.
+     * @return FrameElementList|null FrameNet tag of the word.
      */
-    public function getFrameElementList(): FrameElementList
+    public function getFrameElementList(): ?FrameElementList
     {
         return $this->frameElementList;
     }
@@ -382,9 +382,9 @@ class AnnotatedWord extends Word
 
     /**
      * Returns the slot filling layer of the word.
-     * @return Slot Slot tag of the word.
+     * @return Slot|null Slot tag of the word.
      */
-    public function getSlot(): Slot
+    public function getSlot(): ?Slot
     {
         return $this->slot;
     }
@@ -404,9 +404,9 @@ class AnnotatedWord extends Word
 
     /**
      * Returns the polarity layer of the word.
-     * @return PolarityType Polarity tag of the word.
+     * @return PolarityType|null Polarity tag of the word.
      */
-    public function getPolarity(): PolarityType
+    public function getPolarity(): ?PolarityType
     {
         return $this->polarity;
     }
@@ -471,9 +471,9 @@ class AnnotatedWord extends Word
 
     /**
      * Returns the universal dependency layer of the word.
-     * @return UniversalDependencyRelation Universal dependency relation of the word.
+     * @return UniversalDependencyRelation|null Universal dependency relation of the word.
      */
-    public function getUniversalDependency(): UniversalDependencyRelation
+    public function getUniversalDependency(): ?UniversalDependencyRelation
     {
         return $this->universalDependency;
     }
@@ -771,9 +771,9 @@ class AnnotatedWord extends Word
 
     /**
      * Returns the CCG layer of the word.
-     * @return string CCG string of the word.
+     * @return string|null CCG string of the word.
      */
-    public function getCcg(): string{
+    public function getCcg(): ?string{
         return $this->ccg;
     }
 
@@ -787,9 +787,9 @@ class AnnotatedWord extends Word
 
     /**
      * Returns the posTag layer of the word.
-     * @return string posTag string of the word.
+     * @return string|null posTag string of the word.
      */
-    public function getPosTag(): string{
+    public function getPosTag(): ?string{
         return $this->posTag;
     }
 
